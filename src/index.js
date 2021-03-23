@@ -3,14 +3,18 @@ import ReactDOM from "react-dom";
 
 import "@fontsource/roboto";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { ThemeProvider } from "@material-ui/core/styles";
 
 import App from "./App";
+import theme from "./theme";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
     <CssBaseline></CssBaseline>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
