@@ -9,13 +9,15 @@ import App from "./App";
 import theme from "./theme";
 import reportWebVitals from "./reportWebVitals";
 
+// removed React.Strictmode tag due to findDOMNode being deprecated,
+// but still used by MUI; only use the tag for testing purposes
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <CssBaseline></CssBaseline>
     <ThemeProvider theme={theme}>
       <App />
     </ThemeProvider>
-  </React.StrictMode>,
+  </React.Fragment>,
   document.getElementById("root")
 );
 

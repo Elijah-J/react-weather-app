@@ -1,10 +1,9 @@
-import React from "react";
-
+import "../WeatherDisplay.css";
 import CloudIcon from "@material-ui/icons/CloudOutlined";
+import React from "react";
 import SunIcon from "@material-ui/icons/WbSunnyOutlined";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import Typography from "@material-ui/core/Typography";
-
 import {
   mdiWeatherRainy as RainIcon,
   mdiWeatherSnowy as SnowIcon,
@@ -12,44 +11,42 @@ import {
   mdiWeatherFog as AtmosphereIcon,
 } from "@mdi/js";
 
-import "../WeatherDisplay.css";
-
 const WeatherDisplay = (props) => {
   const { data } = props;
   const { name, weatherMessage, temperature } = data;
+
+  const styleObj = { fontSize: "4.5rem" };
 
   return (
     <div className="WeatherDisplay">
       <Typography variant="h1">{name}</Typography>
 
       {weatherMessage === "Atmosphere" ? (
-        <SvgIcon style={{ fontSize: "4.5rem" }}>
+        <SvgIcon style={styleObj}>
           <path d={AtmosphereIcon} />
         </SvgIcon>
       ) : null}
 
-      {weatherMessage === "Clear" ? (
-        <SunIcon style={{ fontSize: "4.5rem" }}></SunIcon>
-      ) : null}
+      {weatherMessage === "Clear" ? <SunIcon style={styleObj}></SunIcon> : null}
 
       {weatherMessage === "Clouds" ? (
-        <CloudIcon style={{ fontSize: "4.5rem" }}></CloudIcon>
+        <CloudIcon style={styleObj}></CloudIcon>
       ) : null}
 
       {weatherMessage === "Rain" || weatherMessage === "Drizzle" ? (
-        <SvgIcon style={{ fontSize: "4.5rem" }}>
+        <SvgIcon style={styleObj}>
           <path d={RainIcon} />
         </SvgIcon>
       ) : null}
 
       {weatherMessage === "Snow" ? (
-        <SvgIcon style={{ fontSize: "4.5rem" }}>
+        <SvgIcon style={styleObj}>
           <path d={SnowIcon} />
         </SvgIcon>
       ) : null}
 
       {weatherMessage === "Thunderstorm" ? (
-        <SvgIcon style={{ fontSize: "4.5rem" }}>
+        <SvgIcon style={styleObj}>
           <path d={ThunderstormIcon} />
         </SvgIcon>
       ) : null}
