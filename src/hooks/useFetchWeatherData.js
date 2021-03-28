@@ -1,11 +1,6 @@
 import { useEffect } from "react";
 
-export const useFetchWeatherData = ({
-  location,
-  setWeatherData,
-  open,
-  setOpen,
-}) => {
+export const useFetchWeatherData = ({ location, setWeatherData, setOpen }) => {
   const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 
   const convertFromKelvinToFarenheit = (kelvinTemperature) => {
